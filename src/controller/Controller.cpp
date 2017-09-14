@@ -642,7 +642,7 @@ void Controller::dldu	(double *out,double t,double *x, double *u, double *p, dou
 					&&((tmp_agent_ptr_->dim_u_>0)||(tmp_coupling_ptr_->agent2_->dim_u_>0))){
 				double tmp_dldu1[tmp_agent_ptr_->dim_u_];
 				double tmp_dldu2[tmp_coupling_ptr_->agent2_->dim_u_];
-				tmp_coupling_ptr_->dldx(tmp_dldu1,tmp_dldu2,t,\
+				tmp_coupling_ptr_->dldu(tmp_dldu1,tmp_dldu2,t,\
 						x+tmp_coupling_ptr_->index_x1_,x+tmp_coupling_ptr_->index_x2_,\
 						u+tmp_coupling_ptr_->index_u1_,u+tmp_coupling_ptr_->index_u2_,\
 						p+tmp_coupling_ptr_->index_p1_,p+tmp_coupling_ptr_->index_p2_,p+tmp_coupling_ptr_->index_pc_,\
