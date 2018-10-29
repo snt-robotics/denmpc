@@ -3,6 +3,7 @@ cmake_minimum_required(VERSION 2.8.3)
 project(denmpc)
 add_definitions(-std=c++11)
 
+find_package(catkin REQUIRED)
 find_package(catkin REQUIRED COMPONENTS
   roscpp
   rospy
@@ -31,7 +32,7 @@ add_message_files(  FILES  VrepInfo.msg)
 ###################################
 
 catkin_package(
-#  INCLUDE_DIRS include
+  INCLUDE_DIRS ${catkin_INCLUDE_DIRS}
 #  LIBRARIES symbolic
   CATKIN_DEPENDS roscpp rospy std_msgs message_runtime
   DEPENDS Boost
@@ -42,8 +43,8 @@ catkin_package(
 ###########
 
 ###################################################################
-
 include_directories(
+  ${catkin_INCLUDE_DIRS}
   src/
   src/user_generated
   src/user_scenarios
